@@ -1,0 +1,37 @@
+{
+  "name": "fps-emitter",
+  "version": "1.0.0",
+  "description": "FPS meter as an EventEmitter, designed for the browser",
+  "main": "lib/index.js",
+  "scripts": {
+    "test": "standard && zuul --phantom --no-coverage --ui mocha-bdd test/test.js",
+    "prepublish": "npm run build",
+    "build": "rimraf dist && mkdirp dist && npm run bundle && npm run min",
+    "bundle": "browserify -p bundle-collapser/plugin -s FpsEmitter . > dist/fps-emitter.js",
+    "min": "uglifyjs -mc < dist/fps-emitter.js > dist/fps-emitter.min.js"
+  },
+  "keywords": ["fps", "frames", "per", "second", "meter", "emitter", "eventemitter"],
+  "author": "Nolan Lawson <nolan@nolanlawson.com>",
+  "license": "MIT",
+  "dependencies": {
+    "inherits": "^2.0.1",
+    "raf": "^3.2.0"
+  },
+  "devDependencies": {
+    "assert": "^1.4.1",
+    "browserify": "^13.0.1",
+    "bundle-collapser": "^1.2.1",
+    "lie": "^3.0.4",
+    "mkdirp": "^0.5.1",
+    "phantomjs-prebuilt": "^2.1.7",
+    "rimraf": "^2.5.2",
+    "standard": "^7.1.2",
+    "uglify-js": "^2.6.4",
+    "zuul": "^3.10.1"
+  },
+  "files": [
+    "lib",
+    "dist"
+  ],
+  "private": true
+}
