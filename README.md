@@ -48,7 +48,7 @@ fps.setUpdateInterval(2000); // Change the update interval at runtime
 
 ### EventEmitter
 
-This is an [EventEmitter](https://nodejs.org/api/events.html#events_class_eventemitter) 
+The `FpsEmitter` object is an [EventEmitter](https://nodejs.org/api/events.html#events_class_eventemitter) 
 that only emits one event, `'update'`. 
 Standard idioms like `on()`, `.once()`, and `removeListener()` all apply.
 
