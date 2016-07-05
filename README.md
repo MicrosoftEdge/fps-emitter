@@ -4,7 +4,7 @@ fps-emitter
 Measures the FPS (frames per second) on the current page and emits the 
 result whenever it changes. Designed to be run in the browser.
 
-2.7kB minified+gzipped.
+2.8kB minified+gzipped.
 
 Install
 -------
