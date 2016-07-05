@@ -1,8 +1,8 @@
 fps-emitter
 ===========
 
-Measures the FPS (frames per second) on the current page and emits the 
-result whenever it changes. Designed to be run in the browser.
+Measures the FPS (frames per second) of the current page and emits the 
+result whenever it changes, as an [EventEmitter]((https://nodejs.org/api/events.html#events_class_eventemitter). Designed to be run in the browser.
 
 2.8kB minified+gzipped.
 
