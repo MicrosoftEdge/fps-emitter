@@ -35,9 +35,24 @@ fps.on('update', function (newFps) {
 })
 ```
 
+### Update interval
+
+By default, samples are collected every 1000 milliseconds. You can change this
+either in the constructor or via a runtime API:
+
+```js
+var fps = new FpsEmitter(2000); // Update every 2000 milliseconds, from the start
+
+fps.setUpdateInterval(2000); // Change the update interval at runtime
+```
+
+### EventEmitter
+
 This is an [EventEmitter](https://nodejs.org/api/events.html#events_class_eventemitter) 
 that only emits one event, `'update'`. 
 Standard idioms like `on()`, `.once()`, and `removeListener()` all apply.
+
+### Debug vs production mode
 
 Once you call the constructor (`new FpsEmitter()`), it starts tracking the global FPS using
 `requestAnimationFrame()`. Simply measuring the FPS has the potential to cause slowdowns, so
