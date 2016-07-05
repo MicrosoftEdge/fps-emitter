@@ -2,7 +2,7 @@
 
 var assert = require('assert')
 var Promise = require('lie')
-var FpsEmitter = require('..')
+var FpsEmitter = require('.')
 
 /* global describe it */
 

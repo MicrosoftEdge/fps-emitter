@@ -2,9 +2,9 @@
   "name": "fps-emitter",
   "version": "1.0.0",
   "description": "FPS meter as an EventEmitter, designed for the browser",
-  "main": "lib/index.js",
+  "main": "index.js",
   "scripts": {
-    "test": "standard && zuul --phantom --no-coverage --ui mocha-bdd test/test.js",
+    "test": "standard && zuul --phantom --no-coverage --ui mocha-bdd test.js",
     "prepublish": "npm run build",
     "build": "rimraf dist && mkdirp dist && npm run bundle && npm run min",
     "bundle": "browserify -p bundle-collapser/plugin -s FpsEmitter . > dist/fps-emitter.js",
@@ -30,7 +30,7 @@
     "zuul": "^3.10.1"
   },
   "files": [
-    "lib",
+    "index.js",
     "dist"
   ],
   "private": true
