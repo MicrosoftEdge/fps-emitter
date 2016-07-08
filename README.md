@@ -1,10 +1,11 @@
 fps-emitter
 ===========
 
-Measures the FPS (frames per second) of the current page and emits the 
-result whenever it changes, as an [EventEmitter](https://nodejs.org/api/events.html#events_class_eventemitter). Designed to be run in the browser.
+Measures the FPS (frames per second) on the current page and emits the 
+result whenever it changes, as an [EventEmitter][]. Designed to be run in the browser.
 
-2.8kB minified+gzipped.
+2.7kB minified+gzipped, or less if you're already using EventEmitters elsewhere
+in your code.
 
 Install
 -------
@@ -23,7 +24,7 @@ Usage
 -----
 
 ```js
-var FpsEmitter = require('fps-emitter')
+var FpsEmitter = require('fps-emitter') // or window.FpsEmitter if using dist/
 var fps = new FpsEmitter()
 
 // Get the current FPS, as an integer between 0 and 60:
@@ -48,7 +49,7 @@ fps.setUpdateInterval(2000); // Change the update interval at runtime
 
 ### EventEmitter
 
-The `FpsEmitter` object is an [EventEmitter](https://nodejs.org/api/events.html#events_class_eventemitter) 
+The `FpsEmitter` object is an [EventEmitter][] 
 that only emits one event, `'update'`. 
 Standard idioms like `on()`, `.once()`, and `removeListener()` all apply.
 
@@ -76,3 +77,4 @@ Testing
 ## Code of Conduct
 This project has adopted the [Microsoft Open Source Code of Conduct](https://opensource.microsoft.com/codeofconduct/). For more information see the [Code of Conduct FAQ](https://opensource.microsoft.com/codeofconduct/faq/) or contact [opencode@microsoft.com](mailto:opencode@microsoft.com) with any additional questions or comments.
 
+[EventEmitter]: https://nodejs.org/api/events.html#events_class_eventemitter

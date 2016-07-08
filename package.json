@@ -1,7 +1,7 @@
 {
   "name": "fps-emitter",
   "version": "1.0.0",
-  "description": "FPS meter as an EventEmitter, designed for the browser",
+  "description": "FPS as an EventEmitter, designed for the browser",
   "main": "index.js",
   "scripts": {
     "test": "standard && zuul --phantom --no-coverage --ui mocha-bdd test.js",
@@ -10,7 +10,15 @@
     "bundle": "browserify -p bundle-collapser/plugin -s FpsEmitter . > dist/fps-emitter.js",
     "min": "uglifyjs -mc < dist/fps-emitter.js > dist/fps-emitter.min.js"
   },
-  "keywords": ["fps", "frames", "per", "second", "meter", "emitter", "eventemitter"],
+  "keywords": [
+    "fps",
+    "frames",
+    "per",
+    "second",
+    "meter",
+    "emitter",
+    "eventemitter"
+  ],
   "author": "Nolan Lawson <nolan@nolanlawson.com>",
   "license": "MIT",
   "dependencies": {
@@ -33,5 +41,12 @@
     "index.js",
     "dist"
   ],
-  "private": true
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MicrosoftEdge/fps-emitter.git"
+  },
+  "bugs": {
+    "url": "https://github.com/MicrosoftEdge/fps-emitter/issues"
+  },
+  "homepage": "https://github.com/MicrosoftEdge/fps-emitter#readme"
 }

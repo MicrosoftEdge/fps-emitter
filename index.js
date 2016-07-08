@@ -45,7 +45,6 @@ function FpsEmitter (interval) {
   this.setUpdateInterval(interval)
 
   // avoid functions-within-functions, use bound functions for perf
-  this.__onTimer = this.__onTimer.bind(this)
   this.__onRaf = this.__onRaf.bind(this)
 
   this.__fps = 0
@@ -53,11 +52,6 @@ function FpsEmitter (interval) {
   this.__samples = 0
   this.__lastSample = this.__lastSampleBatch = performance.now()
 
-  // it's possible for raf to be called twice in a frame, hence setInterval(..., 16)
-  setInterval(this.__onTimer, 16)
-}
-
-FpsEmitter.prototype.__onTimer = function () {
   raf(this.__onRaf)
 }
 
@@ -82,6 +76,7 @@ FpsEmitter.prototype.__onRaf = function () {
     this.__lastSampleBatch = newTS
   }
   this.__lastSample = newTS
+  raf(this.__onRaf)
 }
 
 FpsEmitter.prototype.setUpdateInterval = function (interval) {
