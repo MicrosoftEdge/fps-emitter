@@ -17,10 +17,10 @@ Via npm:
 
     npm install fps-emitter
 
-Or via npmcdn:
+Or via unpkg:
 
 ```html
-<script src="https://npmcdn.com/fps-emitter/dist/fps-emitter.min.js"></script>
+<script src="https://unpkg.com/fps-emitter/dist/fps-emitter.min.js"></script>
 ```
 
 Usage
