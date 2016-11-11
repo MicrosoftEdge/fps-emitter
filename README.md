@@ -4,8 +4,11 @@ fps-emitter
 Measures the FPS (frames per second) on the current page and emits the 
 result whenever it changes, as an [EventEmitter][]. Designed to be run in the browser.
 
-2.7kB minified+gzipped, or less if you're already using EventEmitters elsewhere
-in your code.
+Note that it only measures FPS per `requestAnimationFrame()`. Therefore it's not an accurate measure of "true" framerate (e.g. where independent composition/rendering may be involved). However it serves as a pretty good measure of how much different UI-blocking events (such as JavaScript) may be impacting your performance. For instance, it's a good measure for JavaScript animations.
+
+Note also that the FPS measurement is rounded to the nearest integer, clamped between 0 and 60.
+
+The library is 2.7kB minified+gzipped, or less if you're already using EventEmitters elsewhere in your code.
 
 Install
 -------
